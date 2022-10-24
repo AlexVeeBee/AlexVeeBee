@@ -1,0 +1,14 @@
+.Nav-page{
+    max-width: var(--max-width-custom);
+    margin-left: 30px;
+    margin-right: 30px;
+}
+.Page-Button-style{
+    background-color: var(--primary-color);
+    width: fit-content;
+}
+@media(max-width: 900px){
+    .Page-Button-style{
+        width: 100%;
+    }   
+}

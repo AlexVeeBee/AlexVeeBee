@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="Assets/Jquery/Jquery.js"></script>
+        <link rel="stylesheet" href="Style/index.css">
+        <link rel="stylesheet" href="Style/nav.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    </head>
+    <body class="h-bkg">
+        <div class="Mainnav">
+            <div class="at-pos-gradient"></div>
+            <div class="Mainnav-inner">
+                <h1 class="Mainnav-logo"></h1>
+                <nav>
+                    <!-- <a tabindex="-1"  href="memes-Archives.php"><button class="Nav-button-style"><h2>Memes</h2></button></a>  -->
+                    <a tabindex="-1" href="https://github.com/AlexVeeBee"><button class="Nav-button-style"><h2>Github</h2></button></a> 
+                    <a tabindex="-1" href="index.html"><button class="Nav-button-style"><h2>Home</h2></button></a> 
+                </nav>
+            </div>
+        </div>
+        <script></script>
+        <div class="header img-element img-1">
+            <img id="video-header" src="https://w.wallhaven.cc/full/0p/wallhaven-0pzdd3.png" alt="3D grid">
+            <!-- <video id="video-header" muted autoplay="true" loop>
+                <source muted autoplay src="./Assets/Videos/microtrailer 2.webm">
+                This browser is not supported
+            </video> -->
+            <div class="img-text" style="z-index: 2;">
+                <h1>AlexVeeBee</h1>
+            </div>
+        </div>
+        <div class="MainContainer" >
+            <div class="list-container">
+            <h1>Portfolio</h1>
+            <div class="custom-HR"></div>
+            <h2 class="List-container-text">My name is AlexVeeBee and i like to code in, php, react js, jquery and more</h2>
+            <span>I like to code UI stuff</span><br><br>
+            <h2 class="List-container-text">Project</h2>
+            <div class="custom-HR"></div>
+            <div class="custom-item-list Portfolio-projects">
+                    
+                <div class="show-item item project-item card-hoverable">
+                    <div class="info">
+                        <h1>TGUI ( Teardown Graphical User Interface)</h1>
+                        <span>Game: Teardown<br>Co-creator: UI Coder</span>
+                    </div><div class="item-MoreInfo"><a tabindex="-1" class="btn-steam-a" href="https://github.com/AlexVeeBee/TGUI"><button class="btn btn-nornal">Github</button></a></div></div>
+                <div class="show-item item project-item card-hoverable">
+                    <div class="info">
+                        <h1>Harry Potter - Witchcraft and Wizardry</h1>
+                        <span>Game: Teardown<br>Contrtubitor as: UI Coder and desiner</span>
+                    </div><div class="item-MoreInfo"><a tabindex="-1" class="btn-steam-a" href="https://github.com/AlexVeeBee/TGUI"><button class="btn btn-nornal">Github</button></a><a tabindex="-1" class="btn-steam-a" href="https://steamcommunity.com/sharedfiles/filedetails/?id=2795959492"><button class="btn btn-nornal">Workshop</button></a><a tabindex="-1" class="btn-steam-a" href="https://alexveebee.github.io/HP-TD-devblogs/"><button class="btn btn-nornal">News</button></a></div></div>                </div>
+            <div class="pagebottom"></div>
+        </div>
+        <div class="website-footer">
+            <h1>AlexVeeBee</h1>
+            <h4>2022 - 2023</h4>
+        </div>
+    </body>
+    <style>
+        .MainContainer {
+            margin-top: 30px;
+        }
+        .Locations-button{
+            --margin-left-right: 0px;
+            color: var(--main-text-color);
+            cursor: pointer;
+            margin: 5px;
+            margin-left: var(--margin-left-right);
+            margin-right: var(--margin-left-right);
+            border: none;
+            width: 120px;
+            background: var(--primary-color);
+            padding: 15px;
+            border-radius: 6px;
+        }
+        .Locations-button:focus{
+            outline: 2px solid rgb(0, 0, 0);
+        }
+        .Locations-button:hover{
+            background: var(--secondery-color-alt);
+            box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.3);
+        }
+        .img-element{
+            /* margin-bottom: 30px; */
+            background: rgb(0,0,0);
+            /* background-image: var(--backimg);
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover; */
+            position: relative; 
+            top:0px;
+            left:0px;
+            width: 100%;
+            height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .img-text{
+            /* transform: translate(-50%,-50%); */
+            /* width: fit-content; */
+            /* position: absolute; */
+            /* top: 50%; */
+            /* left: 50%; */
+            margin-top: 5%;
+            width: 100%;
+            max-width: var(--max-width-custom);
+            /* background-color: var(--secondery-color-dark); */
+            color: white;
+            text-shadow: 0px 0px 4px black;
+            /* padding: 32px; */
+            font-size: 32px;
+        }
+
+        /* Steam style button: purchase button */
+        .btn-steam {
+            border-radius: 2px;
+            display: block;
+            padding: 0 15px;
+            font-size: 15px;
+            line-height: 30px;
+            border: none;
+            width: max-content;
+            cursor: pointer;
+
+			background: #6fa720;
+			background: -webkit-linear-gradient( top, #6fa720 5%, #588a1b 95%);
+	        background: linear-gradient( to bottom, #6fa720 5%, #588a1b 95%);
+		    background: linear-gradient( to right, #75b022 5%, #588a1b 95%);
+
+            color: #d2efa9;
+            text-shadow: 1px 1px 2px rgb(0 0 0 / 30%);
+        }
+        .btn-steam:hover {
+            color: white;
+            background: #8ed629;
+			background: -webkit-linear-gradient( top, #8ed629 5%, #6aa621 95%);
+            background: linear-gradient( to bottom, #8ed629 5%, #6aa621 95%);
+            background: linear-gradient( to right, #8ed629 5%, #6aa621 95%);
+        }
+
+        /* .List-container-workingon{
+            display: block;
+            background-color: var(--secondery-color-alt);
+            margin-top: 10px;
+            padding: 20px;
+            padding-bottom: 10px;
+        }
+        .wrkingon-item{
+            background-color: var(--secondery-color);
+            border-radius: 10px;
+            padding: 10px;
+            margin-bottom: 10px;
+        } */
+        @media (prefers-color-scheme: dark) {
+            :root{
+                --hover-effect-color: rgb(155,155,155,0.2);
+            }
+        }
+        @media (prefers-color-scheme: light) {
+            :root{
+                --hover-effect-color: rgb(20,20,20,0.2);
+            }
+        }
+        .card-hoverable:hover::before {
+            opacity: 1;
+        }
+        .card-hoverable::before {
+            content: "";
+            transition: opacity 0.3s;
+            opacity: 0;
+            pointer-events: none;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0px;
+            left: 0px;
+            z-index: 2;
+            background: radial-gradient(800px circle at var(--m-x) var(--m-y), var(--hover-effect-color), transparent 40%);
+        }
+    </style>
+    <script> $(document).ready(() => { $("#video-header")[0].play(); }); </script>
+    <script>
+        const handleOnMouseMove = e => {
+            const {currentTarget: target} = e
+
+            const rect = target.getBoundingClientRect(),
+                x = e.clientX - rect.left,
+                y = e.clientY - rect.top;
+
+            target.style.setProperty("--m-x", `${x}px`);
+            target.style.setProperty("--m-y", `${y}px`);
+        }
+
+        for(const card of document.querySelectorAll(".card-hoverable")) {
+            card.onmousemove = e => handleOnMouseMove(e);
+        }
+
+        $(document).ready(function() {
+            const navHide = 15;
+    
+            if ($(window).scrollTop() >= navHide) {
+                $('.Mainnav').addClass('AtPosition')
+                // $('.More-nav').addClass('Hide-more-nav')
+            } else {
+                $('.Mainnav').removeClass('AtPosition')
+                // $('.More-nav').removeClass('Hide-more-nav')
+            }
+            $(window).scroll(function() {
+                if ($(window).scrollTop() >= navHide) {
+                    $('.Mainnav').addClass('AtPosition')
+                    // $('.More-nav').addClass('Hide-more-nav')
+                } else {
+                    $('.Mainnav').removeClass('AtPosition')
+                    // $('.More-nav').removeClass('Hide-more-nav')
+                }
+            });
+        });
+
+    </script>
+</html>

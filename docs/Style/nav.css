@@ -1,0 +1,152 @@
+nav {
+    display: flex;
+}
+.header-alert {
+    padding: 24px;
+    background-color: orange;
+}
+.Mainnav{
+    transition: 0.3s ease;
+    padding-top: 50px;
+    padding-bottom: 10px;
+    z-index: 78;
+    position: fixed;
+    width: 100%;
+    background-color: rgba(0,0,0,0);
+    top: 0px;
+    box-shadow: 0px 0px 0px 0px rgb(0,0,0,0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.h-bkg .Mainnav button{
+    color: white;
+}
+.h-bkg .Mainnav .at-pos-gradient {
+    transition: opacity 0.3s ease, height 0.3s ease;
+    opacity: 1;
+    top: 0px;
+    --bkg-t-1: 0.623;
+    --bkg-t-2:0.246;
+    background: linear-gradient( to top,rgba(0, 0, 0, var(--bkg-t-1)), rgba(0, 0, 0, var(--bkg-t-2)) );
+    border-bottom: 1px solid rgba(4,4,4,0.9 );
+    color: white;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+@media(max-width: 800px) {
+    .Mainnav{
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+}
+.Mainnav-inner{
+    display: flex;
+    /* left: 50%; */
+    /* transform: translate(-50%,0%); */
+    width: -webkit-fill-available;
+    max-width: var(--max-width-custom);
+    position: relative;
+    align-items: center;
+    justify-content: space-between;
+}
+.Mainnav-inner nav{ 
+    position: relative;
+    /* left: calc(100% - 10px); */
+    margin-right: 10px;
+    width: fit-content;
+    /* transform: translate(-100%,0%); */
+}
+.Mainnav-logo{
+    margin-left: 12px;
+}
+
+.Mainnav-logo::after{
+    content: "AlexVeeBee";
+}
+.Nav-button-style{
+    --margin-left-right: 0px;
+    cursor: pointer;
+    margin: 5px;
+    margin-left: var(--margin-left-right);
+    margin-right: var(--margin-left-right);
+    border: none;
+    width: 120px;
+    background: rgba(0, 0, 0, 0);
+    padding: 15px;
+    border-radius: 6px;
+}
+.Nav-button-style:focus{
+    outline: 2px solid rgb(0, 0, 0);
+}
+.Nav-button-style:hover{
+    background: var(--secondery-color-alt);
+    box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.3);
+}
+.h-bkg .Nav-button-style:hover {
+    background: black;
+}
+.h-bkg .AtPosition .Nav-button-style:hover {
+    background: var(--secondery-color-alt);
+}
+/* .More-nav{
+    margin-top: 10px;
+    color: white;
+    height: 40px;
+    transition: 0.3s;
+    overflow: hidden;
+    background: var(--secondery-color-alt);
+} */
+/*Jquery Position*/
+.AtPosition{
+    padding-top: 0px;
+    padding-bottom: 0px;
+    background-color: var(--secondery-color) !important;
+    background: var(--secondery-color) !important;
+    box-shadow: 0px 2px 4px 0px rgb(0,0,0,0.3);
+    border-bottom: 0px solid rgba(4,4,4,0.0 ) !important;
+    color: var(--main-text-color) !important;
+    /* transition: var(--bkg-t-1) ease 0.3s, ; */
+    /* --bkg-t-1: 1 !important;
+    --bkg-t-2: 1 !important; */
+    /* background: linear-gradient( to top,rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) ) !important; */
+
+}
+.AtPosition button{
+    color: var(--main-text-color) !important;
+}
+.h-bkg .AtPosition .at-pos-gradient {
+    transition-delay: 0.1s;
+    transition: opacity 0.3s ease, height 0.3s ease;
+    height: 0%;
+    opacity: 1;
+    top: -1px;
+}
+.h-bkg .AtPosition .Mainnav-logo {
+    color: var(--main-text-color) !important;
+}
+@media (prefers-color-scheme: dark) {
+    .h-bkg .Mainnav-logo{
+        color: white;
+    }
+}
+@media (prefers-color-scheme: light) {
+    .h-bkg .Mainnav-logo{
+        color: white;
+    }
+}
+.Mainnav-logo{
+    color: var(--main-text-color);
+}
+@media(max-width: 800px) {
+    .Mainnav-logo::after{
+        content: "AVB";
+    }
+}
+@media(max-width: 500px) {
+    .Mainnav-logo{
+        left: 10px;
+    }
+}
