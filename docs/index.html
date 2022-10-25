@@ -56,17 +56,19 @@
                         <span>Game: Teardown<br>Contrtubitor as: UI Coder and designer</span>
                     </div><div class="item-MoreInfo"><a tabindex="-1" class="btn-steam-a" href="https://github.com/AlexVeeBee/TGUI"><button class="btn btn-nornal">Github</button></a><a tabindex="-1" class="btn-steam-a" href="https://steamcommunity.com/sharedfiles/filedetails/?id=2795959492"><button class="btn btn-nornal">Workshop</button></a><a tabindex="-1" class="btn-steam-a" href="https://alexveebee.github.io/HP-TD-devblogs/"><button class="btn btn-nornal">News</button></a></div></div>
                 <div class="show-item item project-item card-hoverable magic-border">
+                    <div class="special-background" style="--bkg:url(https://w.wallhaven.cc/full/r7/wallhaven-r767zw.jpg);"></div>
                     <div class="info">
                         <h1 class="Magical-Text">Super Secret Project</h1>
                         <span>Game: ???<br>Creator</span>
                     </div>
                     <div class="item-MoreInfo">
-                        <a tabindex="-1" class="btn-steam-a" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><button class="btn btn-nornal">Request Access</button></a>
+                        <a tabindex="-1" class="btn-steam-a" id="special-button" onclick="" ><button class="btn btn-nornal">Request Access</button></a>
                     </div>
+                    <!-- href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" -->
                 </div>
             </div>
             <div class="pagebottom"></div>
-        </div>
+        </div>        
         <div class="website-footer">
             <h1>AlexVeeBee</h1>
             <h4>2022 - 2023</h4>
@@ -74,6 +76,7 @@
             <a tabindex="-1" class="btn-steam-a" href="https://wallhaven.cc/w/0pzdd3"><button class="btn btn-nornal">Go To Wallhaven</button></a>
         </div>
     </body>
+    
     <style>
         .MainContainer {
             margin-top: 30px;
@@ -196,6 +199,17 @@
             z-index: 2;
             background: radial-gradient(800px circle at var(--m-x) var(--m-y), var(--hover-effect-color), transparent 40%);
         }
+        .Portfolio-projects .project-item.magic-border::before{
+            content: "";
+            background: radial-gradient(800px circle at var(--m-x) var(--m-y), rgba(39, 149, 217, 0.347), transparent 40%);
+            animation: background-pan-hover 3s infinite linear;
+        }
+        /* @keyframes background-pan-hover {
+            0% {   background: radial-gradient(800px circle at var(--m-x) var(--m-y), var(--color-start), transparent 40%); }
+            30% {  background: radial-gradient(800px circle at var(--m-x) var(--m-y), var(--color-2), transparent 40%); }
+            60% {  background: radial-gradient(800px circle at var(--m-x) var(--m-y), var(--color-3), transparent 40%); }
+            100% { background: radial-gradient(800px circle at var(--m-x) var(--m-y), var(--color-start), transparent 40%); }
+        } */
     </style>
     <script> $(document).ready(() => { $("#video-header")[0].play(); }); </script>
     <script>
@@ -233,6 +247,10 @@
                     // $('.More-nav').removeClass('Hide-more-nav')
                 }
             });
+
+            $("#special-button").on("click", function () {
+                window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ', '_blank').focus();
+            })
         });
 
     </script>
