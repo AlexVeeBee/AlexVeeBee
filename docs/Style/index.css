@@ -194,18 +194,23 @@ body{
     text-decoration: none;
 }
 /* Projects */
+.Portfolio-projects {
+    gap: 4px;
+    display: flex;
+    flex-direction: column;
+}
 .Portfolio-projects .project-item {
     position: relative;
     display: flex; 
     justify-content: space-between;
     padding: 0px 0px;
     padding-left: 12px;
-    transition: box-shadow 0.3s ease;
+    transition: box-shadow 0.3s ease, background 0.3s ease;
     border-radius: 4px;
 }
 .Portfolio-projects .project-item:hover {
     /* color: white; */
-    /* background: rgb(57, 57, 57); */
+    background: var(--secondery-color);
     /* background: linear-gradient(to bottom); */
     box-shadow: 0px 0px 8px 2px rgba(0,0,0,0.6), inset 0 0 0 1px var(--secondery-border-color-alt);
 }
@@ -232,7 +237,36 @@ body{
     pointer-events: all;
     width: -webkit-fill-available;
 }
-
+.Portfolio-projects .project-item.magic-border {
+    --color-start: rgb(202, 39, 217);
+    --color-2: rgb(39, 149, 217);
+    --color-3: rgb(255, 130, 203);
+    /* background: linear-gradient(to right ,var(--color-start), var(--color-2),var(--color-3), var(--color-start)); */
+    background-size: 200%;
+    animation: background-pan-box-shadow 3s infinite linear;
+    box-shadow: 0px 0px 8px 2px rgba(0,0,0,0.6), inset 0 0 0 1px var(--secondery-border-color-alt);
+}
+.Portfolio-projects .project-item .Magical-Text {
+    --color-start: rgb(202, 39, 217);
+    --color-2: rgb(39, 149, 217);
+    --color-3: rgb(255, 130, 203);
+    background: linear-gradient(to right ,var(--color-start), var(--color-2),var(--color-3), var(--color-start));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200%;
+    animation: background-pan 3s infinite linear;
+}
+@keyframes background-pan {
+    from { background-position: 0%}
+    to { background-position: 200%;}
+}
+@keyframes background-pan-box-shadow {
+    0% { box-shadow: 0px 0px 8px 2px rgba(0,0,0,0.6), inset 0 0 0 1px var(--color-start); }
+    30% { box-shadow: 0px 0px 8px 2px rgba(0,0,0,0.6), inset 0 0 0 1px var(--color-2); }
+    60% { box-shadow: 0px 0px 8px 2px rgba(0,0,0,0.6), inset 0 0 0 1px var(--color-3); }
+    100% { box-shadow: 0px 0px 8px 2px rgba(0,0,0,0.6), inset 0 0 0 1px var(--color-start); }
+}
 /*  */
 @media(max-width: 1300px) {
     .MainContainer{
