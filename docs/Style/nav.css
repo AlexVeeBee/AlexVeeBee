@@ -66,29 +66,32 @@ nav {
 .Mainnav-logo::after{
     content: "AlexVeeBee";
 }
-.Nav-button-style{
+.Mainnav nav{
+    padding: 5px;
+}
+.Mainnav nav .Nav-button-style{
     --margin-left-right: 0px;
     cursor: pointer;
-    margin: 5px;
+    /* margin: 5px; */
     margin-left: var(--margin-left-right);
     margin-right: var(--margin-left-right);
     border: none;
-    width: 120px;
+    /* width: 120px; */
     background: rgba(0, 0, 0, 0);
     padding: 15px;
     border-radius: 6px;
 }
-.Nav-button-style:focus{
+.Mainnav nav .Nav-button-style:focus{
     outline: 2px solid rgb(0, 0, 0);
 }
-.Nav-button-style:hover{
+.Mainnav nav .Nav-button-style:hover{
     background: var(--secondery-color-alt);
     box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.3);
 }
-.h-bkg .Nav-button-style:hover {
+.h-bkg nav .Nav-button-style:hover {
     background: black;
 }
-.h-bkg .AtPosition .Nav-button-style:hover {
+.h-bkg .AtPosition nav .Nav-button-style:hover {
     background: var(--secondery-color-alt);
 }
 /* .More-nav{
