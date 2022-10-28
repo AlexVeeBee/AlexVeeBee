@@ -19,6 +19,38 @@ nav {
     flex-direction: column;
     align-items: center;
 }
+/* nav */
+.navbar-mobile {
+    display: none;
+}
+.navbar-mobile .nav-button {
+    transition: box-shadow 0.3s ease, background 0.3s ease, border 0.1s ease;
+    padding: 4px 8px;
+    font-size: 16px;
+    background: var(--secondery-color);
+    color: var(--main-text-color);
+    border: 1px solid var(--primary-border-color);
+    border-radius: 5px;
+    cursor: pointer;
+    display: grid;
+}
+.navbar-mobile .nav-button:hover  {
+    padding: 4px 8px;
+    font-size: 16px;
+    background: var(--primary-color);
+    color: var(--main-text-color);
+    border: 1px solid var(--secondery-border-color);
+    box-shadow: 0px 2px 8px 2px rgba(0, 0, 0, 0.5);
+}
+.mobile-nav {
+    z-index: 100;
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    background-color: var(--main-bg-color);
+}
+/* Header background */
 .h-bkg .Mainnav button{
     color: white;
 }
@@ -35,12 +67,37 @@ nav {
     width: 100%;
     height: 100%;
 }
-
+/* Header color white */
+.h-cwhite .Mainnav a{
+    color: white;
+}
+.h-cwhite .Mainnav button{
+    color: white;
+}
+.h-cwhite .Mainnav .Mainnav-logo {
+    color: white;
+}
+.h-cwhite .AtPosition .Mainnav-logo {
+    color: var(--main-text-color) !important;
+}
+/*  */
 @media(max-width: 800px) {
     .Mainnav{
         padding-top: 10px;
         padding-bottom: 10px;
     }
+    /* .navbar-desktop {
+        display: none;
+    }
+    .navbar-mobile {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        max-width: 1200px;
+        padding: 0px 20px;
+    } */
 }
 .Mainnav-inner{
     display: flex;
