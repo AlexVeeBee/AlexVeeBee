@@ -45,7 +45,7 @@
         </div> -->
         <script></script>
         <div class="header img-element img-1">
-            <img id="video-header" src="https://w.wallhaven.cc/full/73/wallhaven-73rw9e.jpg" alt="3D grid">
+            <img id="video-header" class="img-header" src="https://w.wallhaven.cc/full/73/wallhaven-73rw9e.jpg" alt="3D grid">
             <!-- <img id="video-header" src="https://w.wallhaven.cc/full/0p/wallhaven-0pzdd3.png" alt="3D grid"> -->
             <!-- <video id="video-header" muted autoplay="true" loop>
                 <source muted autoplay src="./Assets/Videos/microtrailer 2.webm">
@@ -81,7 +81,7 @@
                         <h1>Harry Potter - Witchcraft and Wizardry</h1>
                         <span>Game: Teardown<br>Contrtubitor as: UI Coder and designer</span>
                         <!-- Get stars -->
-                        <iframe src="http://ghbtns.com/github-btn.html?user=deffcolony&repo=HP-Witchcraft-and-Wizardry&type=watch&count=true" frameborder="0" scrolling="0" width="170px" height="20px"></iframe>
+                        <iframe src="https://ghbtns.com/github-btn.html?user=deffcolony&repo=HP-Witchcraft-and-Wizardry&type=watch&count=true" frameborder="0" scrolling="0" width="170px" height="20px"></iframe>
                     </div><div class="item-MoreInfo"><a tabindex="-1" class="btn-steam-a" href="https://github.com/deffcolony/HP-Witchcraft-and-Wizardry/"><button class="btn btn-nornal">Github</button></a><a tabindex="-1" class="btn-steam-a" href="https://steamcommunity.com/sharedfiles/filedetails/?id=2795959492"><button class="btn btn-nornal">Workshop</button></a><a tabindex="-1" class="btn-steam-a" href="https://alexveebee.github.io/HP-TD-devblogs/"><button class="btn btn-nornal">News</button></a></div>
                 </div>
                 <!-- <div class="show-item item project-item card-hoverable magic-border">
@@ -301,6 +301,15 @@
                     // $('.More-nav').removeClass('Hide-more-nav')
                 }
             });
+            // image parallax effect when scrolling
+            // img-header
+            // var img = document.querySelector('.img-header');
+            // var imgTop = img.style.top ;
+
+            // $(window).scroll(function() {
+            //     var wScroll = $(this).scrollTop();
+            //     img.style.top = imgTop + (wScroll * 5) + 'px';
+            // });
 
             $("#special-button").on("click", function () {
                 window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ', '_blank').focus();
