@@ -126,6 +126,19 @@ nav {
 .Mainnav nav{
     padding: 5px;
 }
+
+/*  */
+
+.Mainnav nav .navbar-desktop{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    padding: 0px 20px;
+}
+
 .Mainnav nav .Nav-button-style{
     --margin-left-right: 0px;
     cursor: pointer;
@@ -137,6 +150,7 @@ nav {
     background: rgba(0, 0, 0, 0);
     padding: 15px;
     border-radius: 6px;
+    display: grid;
 }
 .Mainnav nav .Nav-button-style:focus{
     outline: 2px solid rgb(0, 0, 0);
