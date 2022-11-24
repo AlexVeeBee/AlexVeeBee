@@ -1,7 +1,7 @@
 var InBlog = false;
 var pageOpen = true;
 var docs;
-const blogsPath = "./blogs/_blogs.json"
+const blogsPath = "./blogs/main.blogs.json"
 var bodyContent = ".MainContainer #blogs";
 
 var cssref = document.createElement("link");
@@ -22,7 +22,8 @@ function goHome() {
 
         new SyntaxError("Error: No blogs found");
 
-        const nextURL = `http://127.0.0.1:5500/docs/pages/blog.index.html`;
+        const nextURL = 'https://alexveebee.github.io/AlexVeeBee/pages/blog.index.html';
+        // const nextURL = `http://127.0.0.1:5500/docs/pages/blog.index.html`;
         const nextTitle = 'Loading';
         const nextState = { additionalInformation: '' };
         if (!pageOpen) {
@@ -112,8 +113,8 @@ function goToBlog(id) {
     $.getJSON(blogsPath, (data) => {
         var item = data[id]
         itemjson = item
-        // const nextURL = 'https://alexveebee.github.io/TGUI/?viewDoc='+id;
-        const nextURL = `http://127.0.0.1:5500/docs/pages/blog.index.html?blogid=${id}`;
+        const nextURL = `https://alexveebee.github.io/AlexVeeBee/pages/blog.index.html?blogid=${id}`;
+        // const nextURL = `http://127.0.0.1:5500/docs/pages/blog.index.html?blogid=${id}`;
         const nextTitle = 'Loading';
         const nextState = { additionalInformation: '' };
         if (!pageOpen) {
