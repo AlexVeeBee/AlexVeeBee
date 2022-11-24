@@ -1,0 +1,25 @@
+[
+    {
+        "id": "0",
+        "title": "Normal blog",
+        "description": "This is a normal blog",
+        "date": "2019-01-01",
+        "content": "This is a normal blog post",
+        "html": "./blog0.normal.html"
+    },
+    {
+        "id": "1",
+        "title": "Header Blog",
+        "date": "2019-01-01",
+        "content": "This is a header blog post",
+        "hasHeaderImage": true,
+        "headerImage": "../Objects/2022-11-18-00-09-17.png"
+    },
+    {
+        "id": "2",
+        "title": "Custom CSS",
+        "date": "2019-01-01",
+        "content": "This is a custom CSS blog post",
+        "CSS_PATH": "./csstest.blog3.css"
+    }
+]

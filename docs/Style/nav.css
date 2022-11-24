@@ -101,13 +101,13 @@ nav {
 }
 .Mainnav-inner{
     display: flex;
-    /* left: 50%; */
-    /* transform: translate(-50%,0%); */
     width: -webkit-fill-available;
+    width: -moz-available;
     max-width: var(--max-width-custom);
     position: relative;
     align-items: center;
     justify-content: space-between;
+    margin: 0px 24px;
 }
 .Mainnav-inner nav{ 
     position: relative;
@@ -116,15 +116,12 @@ nav {
     width: fit-content;
     /* transform: translate(-100%,0%); */
 }
-.Mainnav-logo{
-    margin-left: 12px;
-}
-
 .Mainnav-logo::after{
     content: "AlexVeeBee";
 }
 .Mainnav nav{
     padding: 5px;
+    padding-right: 0px;
 }
 
 /*  */

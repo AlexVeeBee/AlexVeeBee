@@ -117,6 +117,13 @@
                         }
                         // return year + "-" + month + "-" + day + " " + hour + ":" + minute + ":" + second;
                     }
+
+                    function dateTimeChecker(time) {
+                        // $(".time-next-friday").html(dataFriday.day + " days " + dataFriday.hour + " hours " + dataFriday.minute + " minutes ");
+                    
+                        return `${time.day > 0 ? `${time.day} day(s) ` : `${time.hour} hours ${time.minute} minutes ${time.second} seconds`}`
+                    }
+
                     $(document).ready(() => {
                         var date = new Date().getDay();
 
@@ -228,13 +235,13 @@
                         // })
                     })
                     const updateDate = function () {
-                        {
-                            // date-seconds
-                            var date = new Date();
-                            var seconds = date.getSeconds();
+                        // {
+                        //     // date-seconds
+                        //     var date = new Date();
+                        //     var seconds = date.getSeconds();
 
-                            $(".date-seconds").html( seconds < 10 ? "0" + seconds : seconds );
-                        }
+                        //     $(".date-seconds").html( seconds < 10 ? "0" + seconds : seconds );
+                        // }
                         {
                             // friday
                             var date = new Date();
@@ -246,8 +253,9 @@
                             if (dataFriday.day < 0) {
                                 $(".time-next-friday").html("Now");
                             } else {
+                                $(".time-next-friday").html(dateTimeChecker(dataFriday));
                                 // $(".time-next-friday").innerHTML = dataFriday.day + "d " + dataFriday.hour + "h " + dataFriday.minute + "m " + dataFriday.second + "s";
-                                $(".time-next-friday").html(dataFriday.day + " days " + dataFriday.hour + " hours " + dataFriday.minute + " minutes ");
+                                // $(".time-next-friday").html(dataFriday.day + " days " + dataFriday.hour + " hours " + dataFriday.minute + " minutes ");
                             }
                         }
                         {
@@ -262,7 +270,8 @@
                             if (dataSaturday.day < 0) {
                                 $(".time-next-saturday").html("Now");
                             } else {
-                                $(".time-next-saturday").html(dataSaturday.day + " days " + dataSaturday.hour + " hours " + dataSaturday.minute + " minutes ");
+                                $(".time-next-saturday").html(dateTimeChecker(dataSaturday));
+                                // $(".time-next-saturday").html(dataSaturday.day + " days " + dataSaturday.hour + " hours " + dataSaturday.minute + " minutes ");
                             }
                             // $(".time-next-saturday").html(dataSaturday.day + " days " + dataSaturday.hour + " hours " + dataSaturday.minute + " minutes " + dataSaturday.second + " seconds");
                         }
@@ -277,7 +286,8 @@
                             if (dataMonday.day < 0) {
                                 $(".time-next-monday").html("Now");
                             } else {
-                                $(".time-next-monday").html(dataMonday.day + " days " + dataMonday.hour + " hours " + dataMonday.minute + " minutes " );
+                                $(".time-next-monday").html(dateTimeChecker(dataMonday));
+                                // $(".time-next-monday").html(dataMonday.day + " days " + dataMonday.hour + " hours " + dataMonday.minute + " minutes " );
                             }
                         }
                         {
@@ -291,7 +301,8 @@
                             if (dataMonday.day < 0) {
                                 $(".time-next-tuesday").html("Now");
                             } else {
-                                $(".time-next-tuesday").html(dataMonday.day + " days " + dataMonday.hour + " hours " + dataMonday.minute + " minutes ");
+                                $(".time-next-tuesday").html(dateTimeChecker(dataMonday));
+                                // $(".time-next-tuesday").html(dataMonday.day + " days " + dataMonday.hour + " hours " + dataMonday.minute + " minutes ");
                             }
                         }
                         {
@@ -305,7 +316,8 @@
                             if (dataMonday.day < 0) {
                                 $(".time-next-thursday").html("Now");
                             } else {
-                                $(".time-next-thursday").html(dataMonday.day + " days " + dataMonday.hour + " hours " + dataMonday.minute + " minutes ");
+                                $(".time-next-thursday").html(dateTimeChecker(dataMonday));
+                                // $(".time-next-thursday").html(dataMonday.day + " days " + dataMonday.hour + " hours " + dataMonday.minute + " minutes ");
                             }
                         }
                     }

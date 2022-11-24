@@ -138,6 +138,8 @@ button:hover  {
     z-index: 0;
     width: -webkit-fill-available;
     height: -webkit-fill-available;
+    width: -moz-available;
+    height: -moz-available;
     position: absolute;
     top: 0px;
     left: 0px;
@@ -146,6 +148,7 @@ button:hover  {
 }
 .header-alert {
     width: -webkit-fill-available;
+    width: -moz-available;
     padding: 24px;
     background-color: orange;
 }
@@ -166,6 +169,7 @@ button:hover  {
     background-color: var(--secondery-color);
     max-width: var(--max-width-custom);
     width: -webkit-fill-available;
+    width: -moz-available;
     top: 130px;
     border-radius: 6px;
     box-shadow: 0px 4px 24px 6px rgba(0,0,0,0.4);
@@ -281,6 +285,7 @@ button:hover  {
 .Portfolio-projects .project-item .item-MoreInfo a button{
     pointer-events: all;
     width: -webkit-fill-available;
+    width: -moz-available;
 }
 .Portfolio-projects .project-item .special-background {
     --bkg: attr(src url);

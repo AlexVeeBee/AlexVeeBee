@@ -58,6 +58,18 @@
         <div class="MainContainer" >
             <!-- <canvas id="canvas"></canvas> -->
             <div class="list-container">
+                <div style="margin-bottom: 24px;">
+                    <a tabindex="-1" href="pages/blog.index.html"><button class="Nav-button-style"><h2>Blogs</h2></button></a> 
+                </div>
+            </div>
+            <div class="list-container latest-blogs">
+                <h1>Latest Blog</h1>
+                <div class="latest-blog">
+                
+                </div>
+            </div>
+
+            <div class="list-container">
                 <h1>Portfolio</h1>
             </div>
             <div class="list-container">
@@ -117,6 +129,19 @@
     </body>
     
     <style>
+        .latest-blog .blog-item {
+            margin-top: 6px;
+            border-radius: 4px;
+            box-shadow: 0px 0px 8px 2px rgba(0,0,0,0.6), inset 0 0 0 1px var(--secondery-border-color-alt);
+            padding: 12px;
+            background-color: #242424;
+            transition: box-shadow 200ms ease-in-out;
+        }
+        .latest-blog .blog-item:hover {
+            box-shadow: 0px 2px 12px 4px rgba(0,0,0,0.6), inset 0 0 0 1px var(--secondery-border-color-alt);
+            background-color: #3c3c3c;
+        }
+        /*  */
         .MainContainer {
             margin-top: 30px !important;
         }
@@ -129,7 +154,7 @@
             margin-right: var(--margin-left-right);
             border: none;
             width: 120px;
-            background-color: var(--primary-color);
+            background-color    : var(--primary-color);
             padding: 15px;
             border-radius: 6px;
         }
@@ -168,46 +193,6 @@
             font-size: 32px;
         }
 
-        /* Steam style button: purchase button */
-        .btn-steam {
-            border-radius: 2px;
-            display: block;
-            padding: 0 15px;
-            font-size: 15px;
-            line-height: 30px;
-            border: none;
-            width: max-content;
-            cursor: pointer;
-
-			background: #6fa720;
-			background: -webkit-linear-gradient( top, #6fa720 5%, #588a1b 95%);
-	        background: linear-gradient( to bottom, #6fa720 5%, #588a1b 95%);
-		    background: linear-gradient( to right, #75b022 5%, #588a1b 95%);
-
-            color: #d2efa9;
-            text-shadow: 1px 1px 2px rgb(0 0 0 / 30%);
-        }
-        .btn-steam:hover {
-            color: white;
-            background: #8ed629;
-			background: -webkit-linear-gradient( top, #8ed629 5%, #6aa621 95%);
-            background: linear-gradient( to bottom, #8ed629 5%, #6aa621 95%);
-            background: linear-gradient( to right, #8ed629 5%, #6aa621 95%);
-        }
-
-        /* .List-container-workingon{
-            display: block;
-            background-color: var(--secondery-color-alt);
-            margin-top: 10px;
-            padding: 20px;
-            padding-bottom: 10px;
-        }
-        .wrkingon-item{
-            background-color: var(--secondery-color);
-            border-radius: 10px;
-            padding: 10px;
-            margin-bottom: 10px;
-        } */
         @media (prefers-color-scheme: dark) {
             :root{
                 --hover-effect-color: rgb(155,155,155,0.2);
@@ -326,44 +311,21 @@
                 }
             ]));
 
-            // 3D spinning text
-            const canvas = $("#canvas");
-            const pageElement = $(".MainContainer");
+            const blogsPath = "./pages/blogs/_blogs.json"
 
-            // const scene = new THREE.Scene();
-            // // 3D planet with rings around
-            // const geometry = new THREE.TorusGeometry( 10, 3, 16, 100 );
-            // const material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
-            // const torus = new THREE.Mesh( geometry, material );
-            // scene.add( torus );
+            $.getJSON(blogsPath, function(data) {
+                const blogs = data;
 
-            // const camera = new THREE.PerspectiveCamera( 75, pageElement.width() / window.innerHeight, 0.1, 1000 );
-            // camera.position.z = 30;
-
-            // const renderer = new THREE.WebGLRenderer({
-            //     canvas: canvas[0],
-            //     alpha: true
-            // });
-            // renderer.setSize( pageElement.width(), window.innerHeight );
-
-            // function animate() {
-            //     requestAnimationFrame( animate );
-            //     torus.rotation.x += 0.01;
-            //     torus.rotation.y += 0.01;
-            //     renderer.render( scene, camera );
-            // }
-
-
-            // animate();
-
-            // 
-            // $(window).resize(function() {
-            //     $(canvas).attr("width", $(pageElement).width());
-            //     $(canvas).attr("height", "300");
-            // });
-            // $(canvas).attr("width", $(pageElement).width());
-            // $(canvas).attr("height", "300");
-
+                // get the latest blog 
+                const latestBlog = blogs[blogs.length - 1];
+                blogItem = `
+                    <div tabindex="1" onclick="window.location.href = './pages/blog.index.html?blogid=${latestBlog.id}';" class="blog-item card-hoverable">
+                        <h1 class="blog-title">${latestBlog.title}</h1>    
+                    </div>
+                `
+                
+                $(".latest-blog").append(blogItem);
+            });
 
             const handleOnMouseMove = e => {
             const {currentTarget: target} = e

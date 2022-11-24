@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="../Style/index.css">
+    <link rel="stylesheet" href="../Style/nav.css">
+    <link rel="stylesheet" href="../Style/special.css">
+    <script src="../Assets/Jquery/Jquery.js"></script>
+    <script src="./blogs.loader.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title class="page-title">Blogs</title>
+    <!-- metadata for embed -->
+    <meta property="og:title" content="AlexVeeBee's Blogs">
+    <meta property="og:description" content="Blogs">
+</head>
+<body>
+    <body class="h-cwhite">
+        <div class="Mainnav">
+            <div class="at-pos-gradient"></div>
+            <div class="Mainnav-inner">
+                <h1 class="Mainnav-logo"></h1>
+                <nav class="navbar navbar-desktop">
+                    <a tabindex="-1" href=".."><button class="Nav-button-style">
+                        <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+                            <path fill="currentColor" d="M10,20V14H14V20H19V12H22L12,3L2,12H5V20H10Z" />
+                        </svg>
+                    </button></a> 
+                    <a tabindex="-1" href="https://github.com/AlexVeeBee"><button class="Nav-button-style">
+                        <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+                            <path fill="currentColor" d="M12,2A10,10 0 0,0 2,12C2,16.42 4.87,20.17 8.84,21.5C9.34,21.58 9.5,21.27 9.5,21C9.5,20.77 9.5,20.14 9.5,19.31C6.73,19.91 6.14,17.97 6.14,17.97C5.68,16.81 5.03,16.5 5.03,16.5C4.12,15.88 5.1,15.9 5.1,15.9C6.1,15.97 6.63,16.93 6.63,16.93C7.5,18.45 8.97,18 9.54,17.76C9.63,17.11 9.89,16.67 10.17,16.42C7.95,16.17 5.62,15.31 5.62,11.5C5.62,10.39 6,9.5 6.65,8.79C6.55,8.54 6.2,7.5 6.75,6.15C6.75,6.15 7.59,5.88 9.5,7.17C10.29,6.95 11.15,6.84 12,6.84C12.85,6.84 13.71,6.95 14.5,7.17C16.41,5.88 17.25,6.15 17.25,6.15C17.8,7.5 17.45,8.54 17.35,8.79C18,9.5 18.38,10.39 18.38,11.5C18.38,15.32 16.04,16.16 13.81,16.41C14.17,16.72 14.5,17.33 14.5,18.26C14.5,19.6 14.5,20.68 14.5,21C14.5,21.27 14.66,21.59 15.17,21.5C19.14,20.16 22,16.42 22,12A10,10 0 0,0 12,2Z" />
+                        </svg>
+                    </button></a> 
+                </nav>
+                <nav class="navbar navbar-mobile">
+                    <button class="navbar-menu nav-button">
+                        <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+                            <path fill="currentColor" d="M3,18H21V16H3M3,13H21V11H3M3,6V8H21V6H3Z" />
+                        </svg>
+                    </button>
+                </nav>
+            </div>
+        </div>
+        <!-- <div class="mobile-nav">
+            <a tabindex="-1" href="https://github.com/AlexVeeBee"><button class="Nav-button-style">
+                <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M12,2A10,10 0 0,0 2,12C2,16.42 4.87,20.17 8.84,21.5C9.34,21.58 9.5,21.27 9.5,21C9.5,20.77 9.5,20.14 9.5,19.31C6.73,19.91 6.14,17.97 6.14,17.97C5.68,16.81 5.03,16.5 5.03,16.5C4.12,15.88 5.1,15.9 5.1,15.9C6.1,15.97 6.63,16.93 6.63,16.93C7.5,18.45 8.97,18 9.54,17.76C9.63,17.11 9.89,16.67 10.17,16.42C7.95,16.17 5.62,15.31 5.62,11.5C5.62,10.39 6,9.5 6.65,8.79C6.55,8.54 6.2,7.5 6.75,6.15C6.75,6.15 7.59,5.88 9.5,7.17C10.29,6.95 11.15,6.84 12,6.84C12.85,6.84 13.71,6.95 14.5,7.17C16.41,5.88 17.25,6.15 17.25,6.15C17.8,7.5 17.45,8.54 17.35,8.79C18,9.5 18.38,10.39 18.38,11.5C18.38,15.32 16.04,16.16 13.81,16.41C14.17,16.72 14.5,17.33 14.5,18.26C14.5,19.6 14.5,20.68 14.5,21C14.5,21.27 14.66,21.59 15.17,21.5C19.14,20.16 22,16.42 22,12A10,10 0 0,0 12,2Z" />
+                </svg>
+            </button></a> 
+        </div> -->
+        <div class="header header-blog-image img-1">
+            <div class="img-header-lazy-loading"></div>
+            <img class="img-header"/>
+            <div class="img-text" style="z-index: 8;">
+                <h1 class="page-title">Blogs</h1>
+                <h3 class="page-description"></h3>
+                <!-- <span>Videos that will describe what day it is</span> -->
+                <!-- Commit count -->
+                <!-- <iframe src="http://ghbtns.com/github-btn.html?user=alexveebee&repo=TGUI&type=watch&count=true" frameborder="0" scrolling="0" width="170px" height="20px"></iframe>	 -->
+            </div>
+        </div>
+        <div class="MainContainer" >
+            <div class="list-container in-blog-container">
+                <button onclick="goHome()" class="btn btn-normal btn-icon">
+                    <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+                        <path fill="currentColor" d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" />
+                    </svg>
+                </button>
+            </div>
+            <div id="blogs" class="blogs list-container">
+
+            </div>        
+            <div class="website-footer">
+                <h1>AlexVeeBee</h1>
+                <h4>2022 - 2023</h4>
+            </div>
+        </div>
+    </body>
+    
+    <style>
+        button.btn-icon {
+            display: flex;
+            padding: 8px;
+        }
+        .blogs-home {
+            display: flex;
+            flex-direction: column-reverse;
+        }
+        .blogs-home .blog {
+            gap: 24px;
+            display: flex;
+            align-items: center;
+            padding: 16px 12px;
+        }
+        .blogs-home .blog .image {
+            --border-radius: 4px;
+            position: relative;
+            border-radius: var(--border-radius);
+        }
+        .blogs-home .blog .image::before {
+            border-radius: var(--border-radius);
+            content: "";
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            box-shadow: 0px 0px 8px 2px rgba(0,0,0,0.6), inset 0 0 0 1px var(--secondery-border-color-alt);
+        }
+        .blogs-home .blog .image img {
+            border-radius: var(--border-radius);
+            object-fit: cover;
+            display: block;
+        }
+        /* .blogs-home .blog .info {
+        } */
+
+        .header .img-header {
+            z-index: 0;
+            width: -webkit-fill-available;
+            height: -webkit-fill-available;
+            width: -moz-available;
+            height: -moz-available;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            object-fit: cover;
+            pointer-events: none;
+        }
+        /*  */
+        .MainContainer {
+            margin-top: 30px !important;
+        }
+        .Locations-button{
+            --margin-left-right: 0px;
+            color: var(--main-text-color);
+            cursor: pointer;
+            margin: 5px;
+            margin-left: var(--margin-left-right);
+            margin-right: var(--margin-left-right);
+            border: none;
+            width: 120px;
+            background-color: var(--primary-color);
+            padding: 15px;
+            border-radius: 6px;
+        }
+        .Locations-button:focus{
+            outline: 2px solid rgb(0, 0, 0);
+        }
+        .Locations-button:hover{
+            background-color: var(--secondery-color-alt);
+            box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.3);
+        }
+        .header-blog-image img {
+            display: none;
+        }
+        .header-blog-image .img-header-lazy-loading {
+            display: none;
+        }
+        .header-blog-image.open img {
+            display: block;
+        }
+        .header-blog-image.open .img-header-lazy-loading {
+            display: block;
+        }
+        .header-blog-image.open{
+            margin-bottom: 30px;
+            background-image: var(--backimg);
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+            background: rgb(0,0,0);
+            position: relative; 
+            top:0px;
+            left:0px;
+            width: 100%;
+            max-height: 300px !important;
+            min-height: 70vh;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+        }
+        .img-text{
+            z-index: 2;
+            margin-top: 152px;
+            /* margin-left: 32px; */
+            margin-bottom: 32px;
+            width: 100%;
+            max-width: var(--max-width-custom);
+            color: white;
+            text-shadow: 0px 0px 4px black;
+            font-size: 32px;
+            text-align: center;
+        }
+        .header-blog-image.open .img-text{
+            background: rgba(0, 0, 0, 0.388);
+            padding: 24px 0px;
+            border-radius: 8px;
+        }
+
+
+        @media (prefers-color-scheme: dark) {
+            :root{
+                --hover-effect-color: rgb(155,155,155,0.2);
+            }
+        }
+        @media (prefers-color-scheme: light) {
+            :root{
+                --hover-effect-color: rgb(20,20,20,0.2);
+            }
+        }
+        
+        .card-hoverable {
+            position: relative;
+        }
+        .card-hoverable:hover::before {
+            opacity: 1;
+        }
+        .card-hoverable::before {
+            box-shadow: 0px 0px 8px 2px rgba(0,0,0,0.6), inset 0 0 0 1px var(--secondery-border-color-alt);
+            content: "";
+            transition: opacity 0.3s;
+            opacity: 0;
+            pointer-events: none;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            
+            top: 0px;
+            left: 0px;
+            z-index: 2;
+            background: radial-gradient(800px circle at var(--m-x) var(--m-y), var(--hover-effect-color), transparent 40%);
+        }
+    </style>
+    <script>
+        $(document).ready(function() {
+            $(".LoadingPanel").remove();
+            const pageHeader = $(".header")
+            const navHide = pageHeader.height() - 200;
+
+            if ($(window).scrollTop() >= navHide) {
+                $('.Mainnav').addClass('AtPosition')
+                // $('.More-nav').addClass('Hide-more-nav')
+            } else {
+                $('.Mainnav').removeClass('AtPosition')
+                // $('.More-nav').removeClass('Hide-more-nav')
+            }
+            $(window).scroll(function() {
+                if ($(window).scrollTop() >= navHide) {
+                    $('.Mainnav').addClass('AtPosition')
+                    // $('.More-nav').addClass('Hide-more-nav')
+                } else {
+                    $('.Mainnav').removeClass('AtPosition')
+                    // $('.More-nav').removeClass('Hide-more-nav')
+                }
+            });
+            // // Check if the image header has loaded
+            // check if the img src has changed
+            
+            // var img = $('.img-header');
+            // img.on('load', function() {
+            //     $('.img-header').parent(".header").addClass('img-loaded');
+            // });
+            // if (img[0].complete) {
+            //     $('.img-header').parent(".header").addClass('img-loaded');
+            // }
+        });
+
+    </script>
+</html>
