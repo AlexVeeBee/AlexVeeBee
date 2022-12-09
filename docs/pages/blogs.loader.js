@@ -2,7 +2,13 @@ var InBlog = false;
 var pageOpen = true;
 var docs;
 const blogsPath = "./blogs/main.blogs.json"
+const loadingBar = ".Mainnav .loading-bar #bar"
 var bodyContent = ".MainContainer #blogs";
+var progressbar = {
+    total: 0,
+    loaded: 0,
+}
+
 
 var cssref = document.createElement("link");
 cssref.rel = 'stylesheet';
@@ -10,11 +16,15 @@ cssref.type = 'text/css';
 document.getElementsByTagName("head")[0].appendChild(cssref);
 
 function goHome() {
+    
+    $(loadingBar).css("width", "0%");
+
     $(bodyContent).empty();
     $(bodyContent).append(`<h1 class="contentLoading">Loading Blogs</h1>`);
     $(".header-blog-image .img-header").attr("src", ``);
     $(".in-blog-container").hide();
     $(".page-description").html("");
+    $(".header-blog-image").removeClass("open");
     cssref.href = "";
     InBlog = false;
     $.getJSON(blogsPath).then((data) => {
@@ -22,8 +32,8 @@ function goHome() {
 
         new SyntaxError("Error: No blogs found");
 
-        const nextURL = 'https://alexveebee.github.io/AlexVeeBee/pages/blog.index.html';
-        // const nextURL = `http://127.0.0.1:5500/docs/pages/blog.index.html`;
+        // const nextURL = 'https://alexveebee.github.io/AlexVeeBee/pages/blog.index.html';
+        const nextURL = `http://127.0.0.1:5500/docs/pages/blog.index.html`;
         const nextTitle = 'Loading';
         const nextState = { additionalInformation: '' };
         if (!pageOpen) {
@@ -34,7 +44,6 @@ function goHome() {
         $(bodyContent).removeClass("blogs-item");
         $(bodyContent).addClass("blogs-home");
 
-        $(".header-blog-image").removeClass("open");
         $('.img-header').parent(".header").removeClass('img-loaded');
         $("body").removeClass("h-bkg");
             // in-blog-container">btn-icon
@@ -48,16 +57,9 @@ function goHome() {
         data.forEach((blog, index) => {
             $(bodyContent).append(`
                 <div class="blog card-hoverable" tabindex="1" onclick="goToBlog(${index})">
-                    ${blog.hasHeaderImage ? `
                     <div class="image">
-                        <img width="200" height="160" src="${blog.headerImage != null ? blog.headerImage : "https://media.discordapp.net/attachments/1025132161789075547/1044357878053621830/unknown.png" }" alt="">
+                        <img width="200" height="${blog.smallImage ? "160" : "90"}" src="${blog.smallImage != null ? blog.smallImage : "https://media.discordapp.net/attachments/1025132161789075547/1044357878053621830/unknown.png" }" alt="">
                     </div>
-                    ` : `
-                    <div class="image">
-                        <img width="200" height="90" src="${blog.headerImage != null ? blog.headerImage : "https://media.discordapp.net/attachments/1025132161789075547/1044357878053621830/unknown.png" }" alt="">
-                    </div>
-
-                    `}
                     <div class="info">
                         <div class="blog-title">
                             <h1>${blog.title}</h1>
@@ -113,8 +115,8 @@ function goToBlog(id) {
     $.getJSON(blogsPath, (data) => {
         var item = data[id]
         itemjson = item
-        const nextURL = `https://alexveebee.github.io/AlexVeeBee/pages/blog.index.html?blogid=${id}`;
-        // const nextURL = `http://127.0.0.1:5500/docs/pages/blog.index.html?blogid=${id}`;
+        // const nextURL = `https://alexveebee.github.io/AlexVeeBee/pages/blog.index.html?blogid=${id}`;
+        const nextURL = `http://127.0.0.1:5500/docs/pages/blog.index.html?blogid=${id}`;
         const nextTitle = 'Loading';
         const nextState = { additionalInformation: '' };
         if (!pageOpen) {
@@ -126,6 +128,7 @@ function goToBlog(id) {
         $(bodyContent).removeClass("blogs-home");
         $(".in-blog-container").show();
         InBlog = true
+
         if (itemjson.title == undefined) {
         } else {
             $(".page-title").html(itemjson.title)
@@ -137,8 +140,8 @@ function goToBlog(id) {
             $(".header-blog-image .img-header").attr("src", `${itemjson.headerImage}`);
             $('.img-header').parent(".header").removeClass('img-loaded');
             $("body").addClass("h-bkg");
-
             var img = $('.img-header');
+
             img.on('load', function() {
                 $('.img-header').parent(".header").addClass('img-loaded');
                 // remove event listener
@@ -150,6 +153,7 @@ function goToBlog(id) {
         }
 
         if (itemjson.CSS_PATH != undefined) {
+            progressbar.total += 1;
             cssref.href = "./blogs/"+itemjson.CSS_PATH;
         }
         $(bodyContent).empty();

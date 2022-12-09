@@ -13,7 +13,9 @@
         "date": "2019-01-01",
         "content": "This is a header blog post",
         "hasHeaderImage": true,
-        "headerImage": "../Objects/2022-11-18-00-09-17.png"
+        "headerImage": "../Objects/2022-11-18-00-09-17.png",
+        "smallImage": "https://preview.redd.it/wr456zm66s1a1.jpeg?width=467&format=pjpg&auto=webp&s=81bab53127fe4184ad8a64ec82ea4e258a9779fb",
+        "html": "./blog1.header.html"
     },
     {
         "id": "2",
@@ -21,5 +23,16 @@
         "date": "2019-01-01",
         "content": "This is a custom CSS blog post",
         "CSS_PATH": "./csstest.blog3.css"
+    },
+    {
+        "id": "3",
+        "title": "All in one",
+        "date": "2019-01-01",
+        "hasHeaderImage": true,
+        "headerImage": "../Objects/2022-11-18-00-09-17.png",
+        "smallImage": "https://preview.redd.it/wr456zm66s1a1.jpeg?width=467&format=pjpg&auto=webp&s=81bab53127fe4184ad8a64ec82ea4e258a9779fb",
+        "content": "This is a custom CSS blog post",
+        "CSS_PATH": "./csstest.blog3.css",
+        "html": "./blog0.normal.html"
     }
 ]

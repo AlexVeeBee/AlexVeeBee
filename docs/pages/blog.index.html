@@ -17,6 +17,9 @@
 <body>
     <body class="h-cwhite">
         <div class="Mainnav">
+            <div class="loading-bar">
+                <div style="width: 0%;" class="bar" id="bar"></div>
+            </div>
             <div class="at-pos-gradient"></div>
             <div class="Mainnav-inner">
                 <h1 class="Mainnav-logo"></h1>
@@ -113,6 +116,25 @@
         }
         /* .blogs-home .blog .info {
         } */
+        .Mainnav .loading-bar {
+            z-index: 10;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+        }
+        .Mainnav .loading-bar .bar{
+            position: relative;
+            transition: width 200ms ease-in-out, opacity 600ms ease-in-out;
+            width: 50%;
+            height: 100%;
+            background-color: rgb(28, 131, 228);
+        }
+        .Mainnav .loading-bar .bar[complete="true"]{
+            opacity: 0;
+            width: 100%;
+        }
 
         .header .img-header {
             z-index: 0;
