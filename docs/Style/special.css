@@ -21,6 +21,14 @@
     background-size: 200%;
     animation: background-pan 3s infinite linear;
 }
+.hell-text {
+    background: url(https://media0.giphy.com/media/3o85xJY1FaLzqeoBGw/giphy.gif);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: cover;
+    background-position: center;
+}
 @keyframes background-pan {
     from { background-position: 0%}
     to { background-position: 200%;}

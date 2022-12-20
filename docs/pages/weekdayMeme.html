@@ -14,7 +14,6 @@
     </head>
     <body class="h-cwhite">
         <div class="Mainnav">
-            <canvas id="snowcanvas"></canvas>
             <div class="at-pos-gradient"></div>
             <div class="Mainnav-inner">
                 <h1 class="Mainnav-logo"></h1>
@@ -87,12 +86,20 @@
                             <td style="text-align: right"> <h2 class="time-next-saturday">---</h2> </td>
                         </tr>
                         <tr>
+                            <td style="text-align: left"> <h1 class=""><span class="Magical-Text">Running Sundays</span></h1> </td>
+                            <td style="text-align: right"> <h2 class="time-next-sunday">---</h2> </td>
+                        </tr>
+                        <tr>
                             <td style="text-align: left"> <h1 class=""><span class="garfield-Text">Garfield Monday</span></h1> </td>
                             <td style="text-align: right"> <h2 class="time-next-monday">---</h2> </td>
                         </tr>
                         <tr>
-                            <td style="text-align: left"> <h1 class=""><span class="">Hell Tuesady</span></h1> </td>
+                            <td style="text-align: left"> <h1 class=""><span class="hell-text">Hell Tuesady</span></h1> </td>
                             <td style="text-align: right"> <h2 class="time-next-tuesday">---</h2> </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: left"> <h1 class=""><span class="">Ritual Wednesday</span></h1> </td>
+                            <td style="text-align: right"> <h2 class="time-next-wednesday">---</h2> </td>
                         </tr>
                         <tr>
                             <td style="text-align: left"> <h1 class=""><span class="">awwyeah Thursday</span></h1> </td>
@@ -133,8 +140,11 @@
 
                         switch (date) {
                             case 5:
-                                // echo "friday"
-                                html = `
+                                var random = Math.floor(Math.random() * 2) + 1;
+                                if ( random == 1) {
+
+                                    // echo "friday"
+                                    html = `
                                     <div class="saturday-time Magical-Border" style="padding: 12px; display: flex; flex-direction: column; align-items: center">
                                         <h1 class="Magical-Text">ITS FLOPPA FRIDAY!</h1>
                                         <div>
@@ -144,6 +154,15 @@
                                             </video>
                                         </div>
                                     </div>`
+                                } else if (random == 2) {
+                                    html = `
+                                    <div class="saturday-time Magical-Border" style="padding: 12px; display: flex; flex-direction: column; align-items: center">
+                                        <h1 class="Magical-Text">When it friday</h1>
+                                        <div>
+                                            <iframe width="560" height="315" src="https://www.youtube.com/embed/qFoEBIfVj9M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                        </div>
+                                    </div>`
+                                }
                                 break;
                             case 6:
                                 // random number 1 to 3
@@ -192,6 +211,12 @@
                                     </div>`
                                 }
                                 break;
+                            case 7:
+                                html =`
+                                <div class="saturday-time Magical-Border" style="padding: 12px; display: flex; flex-direction: column; align-items: center">
+                                    <h1><span class="">Running Sundays!</span></h1>
+                                </div>`
+                                break;
                             case 1:
                                 html =`
                                 <div class="saturday-time Magical-Border" style="padding: 12px; display: flex; flex-direction: column; align-items: center">
@@ -202,8 +227,15 @@
                             case 2:
                                 html = `
                                 <div class="saturday-time Magical-Border" style="padding: 12px; display: flex; flex-direction: column; align-items: center">
-                                    <h1><span class="">Hell Tuesday!</span></h1>
+                                    <h1><span class="hell-text">Hell Tuesday!</span></h1>
                                     <iframe width="560" height="315" src="https://www.youtube.com/embed/CY8a4uh_PdI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                </div>`
+                                break;
+                            case 3:
+                                html = `
+                                <div class="saturday-time Magical-Border" style="padding: 12px; display: flex; flex-direction: column; align-items: center">
+                                    <h1><span class="">Ritual Wednesday!</span></h1>
+                                    <iframe width="560" height="315" src="https://www.youtube.com/embed/PE8GlPpuLuY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                 </div>`
                                 break;
                             case 4:
@@ -278,6 +310,21 @@
                             // $(".time-next-saturday").html(dataSaturday.day + " days " + dataSaturday.hour + " hours " + dataSaturday.minute + " minutes " + dataSaturday.second + " seconds");
                         }
                         {
+                            // sunday
+                            var date = new Date();
+                            date.setDate(date.getDate() + (0 + 7 - date.getDay()) % 7);
+                            date.setHours(0, 0, 0, 0);
+                            var date = date.getTime();
+                            var date = date - Date.now();
+                            var dataSunday = convertDataTime(date);
+                            if (dataSunday.day < 0) {
+                                $(".time-next-sunday").html("Now");
+                            } else {
+                                $(".time-next-sunday").html(dateTimeChecker(dataSunday));
+                                // $(".time-next-sunday").html(dataSunday.day + " days " + dataSunday.hour + " hours " + dataSunday.minute + " minutes " );
+                            }
+                        }
+                        {
                             // monday
                             var date = new Date();
                             date.setDate(date.getDate() + (1 + 7 - date.getDay()) % 7);
@@ -305,6 +352,21 @@
                             } else {
                                 $(".time-next-tuesday").html(dateTimeChecker(dataMonday));
                                 // $(".time-next-tuesday").html(dataMonday.day + " days " + dataMonday.hour + " hours " + dataMonday.minute + " minutes ");
+                            }
+                        }
+                        {
+                            // wednesday
+                            var date = new Date();
+                            date.setDate(date.getDate() + (3 + 7 - date.getDay()) % 7);
+                            date.setHours(0, 0, 0, 0);
+                            var date = date.getTime();
+                            var date = date - Date.now();
+                            var dataMonday = convertDataTime(date);
+                            if (dataMonday.day < 0) {
+                                $(".time-next-wednesday").html("Now");
+                            } else {
+                                $(".time-next-wednesday").html(dateTimeChecker(dataMonday));
+                                // $(".time-next-wednesday").html(dataMonday.day + " days " + dataMonday.hour + " hours " + dataMonday.minute + " minutes ");
                             }
                         }
                         {
