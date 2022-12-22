@@ -11,8 +11,15 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
         <title>AlexVeeBee</title>
         <script async src="../Assets/Snow.js"></script>
+        <script async src="../Assets/api.modal.js"></script>
     </head>
     <body class="h-cwhite">
+        <div id="modal-contianer" class="modal fade" role="dialog">
+            <div id="modal">
+    
+            </div>
+        </div>
+    
         <div class="Mainnav">
             <div class="at-pos-gradient"></div>
             <div class="Mainnav-inner">
@@ -110,6 +117,9 @@
                         <source src=".//Assets/Videos/yt1s.com - When it Friday meme original_360p.mp4">
                     </video> -->
                 </div>
+                <button class="btn-skip-day">
+                    Skip a day
+                </button>
             </div>
             <script>
                     function convertDataTime(data) {
@@ -250,24 +260,14 @@
                         }
 
                         $(".fetched-day").html(html);
-
-                        // $.ajax({
-                        //     url: `./Assets/WeekDays.php?WEEKDAY=${date.getDay()+3}`,
-                        //     type: "GET",
-                        //     success: function (data) {
-                        //         const container = `${data}`;
-                        //         $(".fetched-day").html(container);
-
-                        //         // `
-                        //         // <div class="Magical-Border" style="padding: 12px; display: flex; flex-direction: column; align-items: center">
-
-                        //         // </div>
-                        //     },
-                        //     error: function (data) {
-                        //         console.log(data);
-                        //     }
-                        // })
                     })
+
+                    function setnowtext( element ) {
+                        // disco-Text
+                        $(element).addClass("disco-Text");
+                        $(element).html("Now");
+                        $(element).parent().parent().addClass("now");
+                    }
                     const updateDate = function () {
                         // {
                         //     // date-seconds
@@ -285,7 +285,7 @@
                             var date = date - Date.now();
                             var dataFriday = convertDataTime(date);
                             if (dataFriday.day < 0) {
-                                $(".time-next-friday").html("Now");
+                                setnowtext(".time-next-friday")
                             } else {
                                 $(".time-next-friday").html(dateTimeChecker(dataFriday));
                                 // $(".time-next-friday").innerHTML = dataFriday.day + "d " + dataFriday.hour + "h " + dataFriday.minute + "m " + dataFriday.second + "s";
@@ -302,7 +302,7 @@
                             var dataSaturday = convertDataTime(date);
                             // if it is satuday
                             if (dataSaturday.day < 0) {
-                                $(".time-next-saturday").html("Now");
+                                setnowtext(".time-next-saturday")
                             } else {
                                 $(".time-next-saturday").html(dateTimeChecker(dataSaturday));
                                 // $(".time-next-saturday").html(dataSaturday.day + " days " + dataSaturday.hour + " hours " + dataSaturday.minute + " minutes ");
@@ -318,7 +318,7 @@
                             var date = date - Date.now();
                             var dataSunday = convertDataTime(date);
                             if (dataSunday.day < 0) {
-                                $(".time-next-sunday").html("Now");
+                                setnowtext(".time-next-sunday")
                             } else {
                                 $(".time-next-sunday").html(dateTimeChecker(dataSunday));
                                 // $(".time-next-sunday").html(dataSunday.day + " days " + dataSunday.hour + " hours " + dataSunday.minute + " minutes " );
@@ -333,7 +333,7 @@
                             var date = date - Date.now();
                             var dataMonday = convertDataTime(date);
                             if (dataMonday.day < 0) {
-                                $(".time-next-monday").html("Now");
+                                setnowtext(".time-next-monday")
                             } else {
                                 $(".time-next-monday").html(dateTimeChecker(dataMonday));
                                 // $(".time-next-monday").html(dataMonday.day + " days " + dataMonday.hour + " hours " + dataMonday.minute + " minutes " );
@@ -348,7 +348,7 @@
                             var date = date - Date.now();
                             var dataMonday = convertDataTime(date);
                             if (dataMonday.day < 0) {
-                                $(".time-next-tuesday").html("Now");
+                                setnowtext(".time-next-tuesday")
                             } else {
                                 $(".time-next-tuesday").html(dateTimeChecker(dataMonday));
                                 // $(".time-next-tuesday").html(dataMonday.day + " days " + dataMonday.hour + " hours " + dataMonday.minute + " minutes ");
@@ -363,7 +363,7 @@
                             var date = date - Date.now();
                             var dataMonday = convertDataTime(date);
                             if (dataMonday.day < 0) {
-                                $(".time-next-wednesday").html("Now");
+                                setnowtext(".time-next-wednesday")
                             } else {
                                 $(".time-next-wednesday").html(dateTimeChecker(dataMonday));
                                 // $(".time-next-wednesday").html(dataMonday.day + " days " + dataMonday.hour + " hours " + dataMonday.minute + " minutes ");
@@ -378,7 +378,7 @@
                             var date = date - Date.now();
                             var dataMonday = convertDataTime(date);
                             if (dataMonday.day < 0) {
-                                $(".time-next-thursday").html("Now");
+                                setnowtext(".time-next-thursday")
                             } else {
                                 $(".time-next-thursday").html(dateTimeChecker(dataMonday));
                                 // $(".time-next-thursday").html(dataMonday.day + " days " + dataMonday.hour + " hours " + dataMonday.minute + " minutes ");
@@ -492,6 +492,41 @@
             60% {  background: radial-gradient(800px circle at var(--m-x) var(--m-y), var(--color-3), transparent 40%); }
             100% { background: radial-gradient(800px circle at var(--m-x) var(--m-y), var(--color-start), transparent 40%); }
         } */
+
+        /* fade out */
+        .btn-skip-day.byebye {
+            animation: fade-out 3s ease-in-out forwards;
+        }
+        @keyframes fade-out {
+            0% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+
+        table {
+        border-collapse: collapse;
+        width: 100%;
+        }
+
+        th, td {
+        text-align: left;
+        }
+        tr.now {
+            border: 6px solid #4CAF50 !important;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+        background-color: #5454542d;
+        }
+
+        th {
+        background-color: #4CAF50;
+        color: white;
+        }
     </style>
     <script>
         $(document).ready(function() {
@@ -515,19 +550,37 @@
                     // $('.More-nav').removeClass('Hide-more-nav')
                 }
             });
-            // // Check if the image header has loaded
-            // var img = $('.img-header');
-            // img.on('load', function() {
-            //     $('.img-header').parent(".header").addClass('img-loaded');
-            // });
-            // if (img[0].complete) {
-            //     $('.img-header').parent(".header").addClass('img-loaded');
-            // }
             
             $("#special-button").on("click", function () {
                 window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ', '_blank').focus();
             })
-        });
 
+            var buttonstate = 1
+
+            $(".btn-skip-day").on("click", function () {
+                switch(buttonstate) {
+                    case 1:
+                        // window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ', '_blank').focus();
+                        // make the button disabled
+                        $(this).css("font-size", "64px");
+                        $(this).text(":(")
+                        buttonstate++;
+                        // on click, change the text to "skipped"
+                        break;
+                    case 2:
+                        // window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ', '_blank').focus();
+                        // make the button disabled
+                        $(this).text("🖕");
+                        $(this).attr("disabled", true);
+                        $(this).addClass("byebye");
+                        setTimeout(function() {
+                            $(".btn-skip-day").css("display", "none");
+                        }, 3000);
+                        // on click, change the text to "skipped"
+                        break;
+                }
+            })
+        });
+        // https://cdn.discordapp.com/attachments/822089060817436722/998683421155016814/trim.BA6460BA-22A6-417C-9BFB-F8A224099445.mov
     </script>
 </html>
