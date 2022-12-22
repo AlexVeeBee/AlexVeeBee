@@ -560,23 +560,18 @@
             $(".btn-skip-day").on("click", function () {
                 switch(buttonstate) {
                     case 1:
-                        // window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ', '_blank').focus();
-                        // make the button disabled
+                        window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ', '_blank').focus();
                         $(this).css("font-size", "64px");
                         $(this).text(":(")
                         buttonstate++;
-                        // on click, change the text to "skipped"
                         break;
                     case 2:
-                        // window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ', '_blank').focus();
-                        // make the button disabled
                         $(this).text("🖕");
                         $(this).attr("disabled", true);
                         $(this).addClass("byebye");
                         setTimeout(function() {
                             $(".btn-skip-day").css("display", "none");
                         }, 3000);
-                        // on click, change the text to "skipped"
                         break;
                 }
             })
