@@ -63,12 +63,12 @@
                     <a tabindex="-1" href="pages/blog.index.html"><button class="Nav-button-style"><h2>Blogs</h2></button></a> 
                 </div>
             </div>
-            <div class="list-container latest-blogs">
+            <!-- <div class="list-container latest-blogs">
                 <h1>Latest Blog</h1>
                 <div class="latest-blog">
                 
                 </div>
-            </div>
+            </div> -->
 
             <div class="list-container">
                 <h1>Portfolio</h1>
@@ -234,9 +234,20 @@
     </style>
     <script>
 
-        function addUserInfo(name, usericon, classname) {
+        function addUserInfo(name, usericon, classname, custombkg) {
             var html = `
             <div class="user-info-card ${classname}">
+                `;
+                if (custombkg) {
+                    html += `
+                    <div class="custom-bkg" layout="${custombkg.layout}">
+                        <img src="${custombkg.img}"  alt="custom-bkg-img">    
+                    </div>
+                    `;
+
+                }
+                
+                html +=`
                 <div class="user-info">
                     <img class="user-icon" src="${usericon}" alt="user-icon">
                     <div class="user-name">${name}</div>
@@ -246,11 +257,30 @@
             return html;
         }
         // https://avatars.githubusercontent.com/u/42937914?v=4
-        function addProductItem(title, description, links)
+        function addProductItem(title, description, links, tags = [])
         {
             $html = `
             <div class="show-item item project-item card-hoverable">
                 <div class="project-item-title info">
+                        `;
+                        if (tags.length > 0) {
+                            $html += '<div class="tags">'
+                            $html += '<span class="">Custom Tags:</span>'
+                            for (let i = 0; i < tags.length; i++) {
+                                var tag = tags[i];
+                                // // check if the tag starts with a ?
+                                var warn = false;
+                                
+                                // splice the string to remove the ? if it exists
+                                if (tag.startsWith("?")) {
+                                    warn = true;
+                                    tag = tag.slice(1);
+                                }
+                                $html += `<span class="tag" ${warn ? "warn" : ""}>${tag}</span>`    
+                            }
+                            $html += '</div>'
+                        }
+                        $html += `
                     <h1>${title}</h1>
                     <span>${description}</span>
                 </div>
@@ -303,30 +333,38 @@
             $("#special-button").on("click", function () {
                 window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ', '_blank').focus();
             })
-            $(".Portfolio-projects .pr-helped").append(addUserInfo("ItsRifter's Projects", "https://avatars.githubusercontent.com/u/42937914?v=4", "rifter"));
+            $(".Portfolio-projects .pr-helped").append(addUserInfo("ItsRifter's Projects", "https://avatars.githubusercontent.com/u/42937914?v=4", "rifter", {img: "https://media.discordapp.net/attachments/529698338342305832/1059416924003520592/Desktop_Screenshot_2022.11.05_-_15.44.25.63.png", layout : "gradient" }));
             $(".Portfolio-projects .pr-helped .rifter").append(addProductItem("ItsRifter/Castle-Defenders",
              "Contrubitor as: Ui Coder and Designer<br>Game: S&Box", [
                 {
                     "link": "https://github.com/ItsRifter/Castle-Defenders",
                     "platform": "Github"
                 }
-            ]));
+            ], ["S&Box", "Garry's Mod", "Defense Game"] ));
+            $(".Portfolio-projects .pr-helped").append(addUserInfo("OffensivePDF's Projects", "https://avatars.githubusercontent.com/u/88991586?v=4", "OffensivePDF", {img: "https://media.discordapp.net/attachments/871596891048144987/878097210464698388/2021-08-20-02-04-38.png", layout : "full" }));
+            $(".Portfolio-projects .pr-helped .OffensivePDF").append(addProductItem("OffensivePDF/Boeing-737-Full",
+             "Contrubitor as: Ui Coder and Designer ( With my brother )<br>Game: Teardoen", [
+                {
+                    "link": "https://steamcommunity.com/sharedfiles/filedetails/?id=2559081519",
+                    "platform": "Workshop"
+                }
+            ],["Teardown", "Boeing 737", "Plane", "?NOT FAA APROVED"] ));
 
-            const blogsPath = "./pages/blogs/_blogs.json"
+            // const blogsPath = "./pages/blogs/_blogs.json"
 
-            $.getJSON(blogsPath, function(data) {
-                const blogs = data;
+            // $.getJSON(blogsPath, function(data) {
+            //     const blogs = data;
 
-                // get the latest blog 
-                const latestBlog = blogs[blogs.length - 1];
-                blogItem = `
-                    <div tabindex="1" onclick="window.location.href = './pages/blog.index.html?blogid=${latestBlog.id}';" class="blog-item card-hoverable">
-                        <h1 class="blog-title">${latestBlog.title}</h1>    
-                    </div>
-                `
+            //     // get the latest blog 
+            //     const latestBlog = blogs[blogs.length - 1];
+            //     blogItem = `
+            //         <div tabindex="1" onclick="window.location.href = './pages/blog.index.html?blogid=${latestBlog.id}';" class="blog-item card-hoverable">
+            //             <h1 class="blog-title">${latestBlog.title}</h1>    
+            //         </div>
+            //     `
                 
-                $(".latest-blog").append(blogItem);
-            });
+            //     $(".latest-blog").append(blogItem);
+            // });
 
             const handleOnMouseMove = e => {
             const {currentTarget: target} = e

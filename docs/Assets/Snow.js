@@ -66,3 +66,9 @@ function move() {
 
 // Call the draw function every 25 milliseconds
 setInterval(draw, 25);
+
+// page on resize
+window.addEventListener("resize", function() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+})
