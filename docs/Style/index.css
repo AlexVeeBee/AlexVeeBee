@@ -8,7 +8,7 @@
     --color-2: rgb(39, 149, 217);
     --color-3: rgb(255, 130, 203);
 }
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) { */
     :root{
         --text-header-banner-color: rgb(255,255,255);
         --main-text-color: rgb(255,255,255);
@@ -29,8 +29,8 @@
         --secondery-border-color: rgb(135, 135, 135);
         --secondery-border-color-alt: rgb(149, 149, 149);
     }
-}
-@media (prefers-color-scheme: light) {
+/* } */
+/* @media (prefers-color-scheme: light) {
     :root{
         --text-header-banner-color: rgb(20,20,20);
         --main-text-color: rgb(0,0,0);
@@ -51,7 +51,7 @@
         
         --invert-color-transparent: rgba(41, 41, 41, 0.5);
     }
-}
+} */
 :root{
     --max-width-custom: 1200px;
     --backimg: url('./Assets/img/home_banner.jpg');

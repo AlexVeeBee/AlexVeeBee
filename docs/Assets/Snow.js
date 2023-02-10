@@ -69,6 +69,6 @@ setInterval(draw, 25);
 
 // page on resize
 window.addEventListener("resize", function() {
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
+  // canvas.width = window.innerWidth;
+  // canvas.height = window.innerHeight;
 })

@@ -85,7 +85,7 @@
                             </td>
                         </tr>
                         <tr>
-                            <td style="text-align: left"> <h1 class=""><span class="Magical-Text">Floppa Friday</span></h1> </td>
+                            <td style="text-align: left"> <h1 class=""><span class="Magical-Text">Funky Friday</span></h1> </td>
                             <td style="text-align: right"> <h2 class="time-next-friday">---</h2> </td>
                         </tr>
                         <tr>
@@ -143,6 +143,8 @@
                         return `${time.day > 0 ? `${time.day} day(s) ` : `${time.hour} hours ${time.minute} minutes ${time.second} seconds`}`
                     }
 
+                    var debug = false;
+
                     $(document).ready(() => {
                         var date = new Date().getDay();
 
@@ -150,7 +152,8 @@
 
                         switch (date) {
                             case 5:
-                                var random = Math.floor(Math.random() * 2) + 1;
+                                // var random = 4
+                                var random = Math.floor(Math.random() * 3) + 1;
                                 if ( random == 1) {
 
                                     // echo "friday"
@@ -172,6 +175,12 @@
                                             <iframe width="560" height="315" src="https://www.youtube.com/embed/qFoEBIfVj9M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                         </div>
                                     </div>`
+                                } else if (random == 3) {
+                                    html = `<div class="saturday-time Magical-Border" style="padding: 12px; display: flex; flex-direction: column; align-items: center">
+                                        <h1><span class="Magical-Text">Friday Night!</span></h1>
+                                        <iframe width="560" height="560" src="https://www.youtube.com/embed/SaNmV7Sx5_M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                    </div>`;
+
                                 }
                                 break;
                             case 6:
@@ -181,7 +190,6 @@
                                     html = `<div class="saturday-time Magical-Border" style="padding: 12px; display: flex; flex-direction: column; align-items: center">
                                         <h1>I CANT BELIEVE I HAVE TO DRIVE ALL THE WAY TO WORK</h1>
                                         <h2>ON A <span class="Magical-Text">SATURDAY!</span> ALL THE WAY TO WORK!</h2>
-                                        <!-- embed: https://youtu.be/Y0OHoPO39pI -->
                                         <iframe width="560" height="315" src="https://www.youtube.com/embed/SK46Xjk3gog" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                         <div style="margin-top: 12px; width: -webkit-fill-available; width: -moz-available;">
                                             <a href="https://twitter.com/algoestowork">
@@ -192,12 +200,11 @@
                                                 </button>
                                             </a>
                                         </div>
-                                    </div>`
+                                    </div>`;
                                 } else if (random == 2){ 
                                     html = `<div class="saturday-time Magical-Border" style="padding: 12px; display: flex; flex-direction: column; align-items: center">
                                         <h1>Saturdays are made for <span class="Magical-Text">dads!</span></h1>
                                         <h2>And dads <span class="Magical-Text">car</span></h2>
-                                        <!-- embed: https://youtu.be/Y0OHoPO39pI -->
                                         <iframe width="560" height="315" src="https://www.youtube.com/embed/Y0OHoPO39pI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                             <div style="margin-top: 12px; width: -webkit-fill-available; width: -moz-available;">
                                             <a href="https://twitter.com/SaturdayForDads">
@@ -206,19 +213,16 @@
                                                         <path fill="currentColor" d="M22.46,6C21.69,6.35 20.86,6.58 20,6.69C20.88,6.16 21.56,5.32 21.88,4.31C21.05,4.81 20.13,5.16 19.16,5.36C18.37,4.5 17.26,4 16,4C13.65,4 11.73,5.92 11.73,8.29C11.73,8.63 11.77,8.96 11.84,9.27C8.28,9.09 5.11,7.38 3,4.79C2.63,5.42 2.42,6.16 2.42,6.94C2.42,8.43 3.17,9.75 4.33,10.5C3.62,10.5 2.96,10.3 2.38,10C2.38,10 2.38,10 2.38,10.03C2.38,12.11 3.86,13.85 5.82,14.24C5.46,14.34 5.08,14.39 4.69,14.39C4.42,14.39 4.15,14.36 3.89,14.31C4.43,16 6,17.26 7.89,17.29C6.43,18.45 4.58,19.13 2.56,19.13C2.22,19.13 1.88,19.11 1.54,19.07C3.44,20.29 5.7,21 8.12,21C16,21 20.33,14.46 20.33,8.79C20.33,8.6 20.33,8.42 20.32,8.23C21.16,7.63 21.88,6.87 22.46,6Z" />
                                                     </svg>
                                                 </button>
-                                                
                                             </a>
                                         </div>
-                                    </div>`
+                                    </div>`;
                                 } else if (random == 3) { html = `
-                                    <!-- u1qN6gLbUMw     -->
                                     <div class="saturday-time Magical-Border" style="padding: 12px; display: flex; flex-direction: column; align-items: center">
                                         <h1>Saturday Night <span class="Magical-Text">Fever!</span></h1>
-                                        <!-- embed: https://youtu.be/Y0OHoPO39pI -->
                                         <video controls style="max-width: 100%;">
                                             <source src="../Objects/yt1s.com - Saturday Night Fever  John Travolta  Bee Gees.mp4">
                                         </video>
-                                    </div>`
+                                    </div>`;
                                 }
                                 break;
                             case 7:
@@ -263,12 +267,14 @@
                     })
 
                     function setnowtext( element ) {
+                        // remove old class
+                        $(".disco-Text").removeClass("disco-Text");
                         // disco-Text
                         $(element).addClass("disco-Text");
                         $(element).html("Now");
                         $(element).parent().parent().addClass("now");
                     }
-                    const updateDate = function () {
+                    const updateDate = function ( ) {
                         // {
                         //     // date-seconds
                         //     var date = new Date();
@@ -396,8 +402,6 @@
             <div class="website-footer">
                 <h1>AlexVeeBee</h1>
                 <h4>2022 - 2023</h4>
-                <span>Credit to <d>daqwid2727</d> for the header image</span>
-                <a tabindex="-1" class="btn-steam-a" href="https://wallhaven.cc/w/73rw9e"><button class="btn btn-nornal">Go To Wallhaven</button></a>
             </div>
         </div>
     </body>
@@ -515,7 +519,8 @@
         text-align: left;
         }
         tr.now {
-            border: 6px solid #4CAF50 !important;
+            text-shadow: 0px 0px 8px rgb(255, 255, 255);
+            animation: textglowbreathing 3s infinite ease-in-out;
             color: white;
         }
 
@@ -527,6 +532,22 @@
         background-color: #4CAF50;
         color: white;
         }
+
+        @keyframes textglowbreathing {
+            0% {
+                text-shadow: 0px 0px 8px rgb(255, 255, 255);
+                color: white;
+            }
+            50% {
+                text-shadow: 0px 0px 16px rgb(255, 255, 255);
+                color: white;
+            }
+            100% {
+                text-shadow: 0px 0px 8px rgb(255, 255, 255);
+                color: white;
+            }
+        }
+
     </style>
     <script>
         $(document).ready(function() {
