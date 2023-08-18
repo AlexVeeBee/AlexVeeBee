@@ -183,6 +183,7 @@ button:hover  {
     padding-bottom: 0px;
 }
 .website-footer{
+    border-radius: 6px;
     padding: 30px;
     background: var(--secondery-color-alt);
     color: var(--main-text-color);
