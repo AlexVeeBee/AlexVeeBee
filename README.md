@@ -3,7 +3,7 @@
 <!--Replace <username> with your own GitHub username.-->
 ![stats](https://pixel-profile.vercel.app/api/github-stats?username=alexveebee&theme=summer)
 
-| I am autistic and i have no idea what i am doing |
+| Please be patient, i have autism |
 | - |
 | Go here: [Home Page](https://alexveebee.nl/) |
 | [Blogs](https://blog.alexveebee.nl/) |
