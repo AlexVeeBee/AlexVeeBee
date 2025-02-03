@@ -5,5 +5,5 @@
 
 | Please be patient, i have autism |
 | - |
-| Go here: [Home Page](https://alexveebee.nl/) |
+| Go here: [Home Page](https://alexveebee.nl/) or [here](https://alexveebee.is) |
 | [Blogs](https://blog.alexveebee.nl/) |
